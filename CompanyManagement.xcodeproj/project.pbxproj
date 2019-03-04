@@ -12,6 +12,7 @@
 		60F28C44222D3429002660CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F28C42222D3429002660CE /* Main.storyboard */; };
 		60F28C46222D342A002660CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F28C45222D342A002660CE /* Assets.xcassets */; };
 		60F28C49222D342A002660CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F28C47222D342A002660CE /* LaunchScreen.storyboard */; };
+		60F28C51222D484D002660CE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F28C50222D484D002660CE /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		60F28C45222D342A002660CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60F28C48222D342A002660CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60F28C4A222D342A002660CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60F28C50222D484D002660CE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,9 @@
 		60F28C3D222D3429002660CE /* CompanyManagement */ = {
 			isa = PBXGroup;
 			children = (
-				60F28C3E222D3429002660CE /* AppDelegate.swift */,
+				60F28C50222D484D002660CE /* UIColor+Extension.swift */,
 				60F28C40222D3429002660CE /* ViewController.swift */,
+				60F28C3E222D3429002660CE /* AppDelegate.swift */,
 				60F28C42222D3429002660CE /* Main.storyboard */,
 				60F28C45222D342A002660CE /* Assets.xcassets */,
 				60F28C47222D342A002660CE /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F28C51222D484D002660CE /* UIColor+Extension.swift in Sources */,
 				60F28C41222D3429002660CE /* ViewController.swift in Sources */,
 				60F28C3F222D3429002660CE /* AppDelegate.swift in Sources */,
 			);
