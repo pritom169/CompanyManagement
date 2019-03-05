@@ -8,14 +8,23 @@
 
 import UIKit
 
-class CompaniesController: UITableViewController {
+class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
     
-    let company = [
+    func didAddCompany(company: Company) {
+        companies.append(company)
+    
+        let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+    }
+    
+    
+    var companies = [
         Company(name: "Apple", founded: Date()),
         Company(name: "Google", founded: Date()),
         Company(name: "Facebook", founded: Date())
     ]
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +36,6 @@ class CompaniesController: UITableViewController {
                                                             style: .plain, target: self, action: #selector(handleAddCompany))
         
         tableView.backgroundColor = UIColor.darkBlue
-//        tableView.separatorStyle = .none
         tableView.separatorColor = .white
         tableView.tableFooterView = UIView()
         
@@ -41,6 +49,9 @@ class CompaniesController: UITableViewController {
         let createCompanyController = CreateCompanyController()
         
         let navController = CustomNavigationController(rootViewController: createCompanyController)
+        
+        createCompanyController.delegate = self
+        
         present(navController, animated: true, completion: nil)
         
     }
@@ -56,7 +67,7 @@ class CompaniesController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return company.count
+        return companies.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +75,7 @@ class CompaniesController: UITableViewController {
         
         cell.backgroundColor = .tealColor
         
-        let companies = company[indexPath.row]
+        let companies = self.companies[indexPath.row]
         
         cell.textLabel?.text = companies.name
         cell.textLabel?.textColor = UIColor.white
